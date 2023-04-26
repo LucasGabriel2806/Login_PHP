@@ -2,10 +2,12 @@
 
     if(isset($_POST['submit']))
     {
-        /*
+        
         print_r('Nome: ' . $_POST['nome']);
         print_r('<br>');
         print_r('Email: ' . $_POST['email']);
+        print_r('<br>');
+        print_r('Senha: ' . $_POST['senha']);
         print_r('<br>');
         print_r('Telefone: ' . $_POST['telefone']);
         print_r('<br>');
@@ -18,12 +20,13 @@
         print_r('Estado:' . $_POST['estado']);
         print_r('<br>');
         print_r('Endereço:' . $_POST['endereco']);
-        */
+        
         //incluindo a conexão
-        include_once('config.php');
+        include_once 'config.php';
 
         $nome = $_POST['nome'];
         $email = $_POST['email'];
+        $senha = $_POST['senha'];
         $telefone = $_POST['telefone'];
         $sexo = $_POST['genero'];
         $data_nasc = $_POST['data_nascimento'];
@@ -40,7 +43,7 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -121,6 +124,7 @@
     </style>
 </head>
 <body>
+    <a href="home.php">Voltar</a>
     <div class="box">
         <form action="formulario.php" method="POST">
             <fieldset>
@@ -132,7 +136,12 @@
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="text" name="email" id="email" class="inputUser" required>
+                    <input type="password" name="senha" id="senha" class="inputUser" required>
+                    <label for="senha" class="labelInput">Senha</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="email" name="email" id="email" class="inputUser" required>
                     <label for="email" class="labelInput">Email</label>
                 </div>
                 <br><br>

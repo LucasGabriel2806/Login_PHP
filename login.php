@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,7 @@
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
-            background-image: linear-gradient(45deg, cyan, yellow);
+            background: linear-gradient(to right, rgb(20, 147, 220), rgb(17, 54, 71));
         }
         div{
             background-color: rgba(0, 0, 0, 0.9);
@@ -26,7 +26,7 @@
             outline: none;
             font-size: 15px;
         }
-        button{
+        .inputSubmit{
             background-color: dodgerblue;
             border: none;
             padding: 15px;
@@ -36,20 +36,23 @@
             font-size: 15px;
             
         }
-        button:hover{
+        .inputSubmit:hover{
             background-color: deepskyblue;
             cursor: pointer;
         }
     </style>
 </head>
 <body>
+    <a href="home.php">Voltar</a>
     <div>
         <h1>Login</h1>
-        <input type="text" placeholder="Nome">
-        <br><br>
-        <input type="password" placeholder="Senha">
-        <br><br>
-        <button>Enviar</button>
+        <form action="testLogin.php" method="POST">
+            <input type="email" name="email" placeholder="Email">
+            <br><br>
+            <input type="password" name="senha" placeholder="Senha">
+            <br><br>
+            <input class="inputSubmit" type="submit" name="submit" value="Enviar">
+        </form>
     </div>
 </body>
 </html>
