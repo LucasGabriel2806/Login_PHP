@@ -4,7 +4,7 @@
     $dbUsername = 'root';
     $dbPassword = 'etecjau';
     $dbName = 'formulario-php';
-    $dbPort = '3306';
+    $dbPort = '3307';
 
     $conexao = new mysqli($dbHost,$dbUsername,$dbPassword,$dbName,$dbPort);
 

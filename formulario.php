@@ -22,23 +22,25 @@
         print_r('Endereço:' . $_POST['endereco']);
         
         //incluindo a conexão
-        include_once 'config.php';
+        include 'config.php';
 
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $senha = $_POST['senha'];
         $telefone = $_POST['telefone'];
-        $sexo = $_POST['genero'];
+        $genero = $_POST['genero'];
         $data_nasc = $_POST['data_nascimento'];
         $cidade = $_POST['cidade'];
         $estado = $_POST['estado'];
         $endereco = $_POST['endereco'];
 
         //query de insert
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email,telefone,sexo,
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email ,senha,telefone,genero,
         data_nasc,cidade,estado,endereco) 
-        VALUES ('$nome', '$email', '$telefone', '$sexo',
+        VALUES ('$nome', '$email', '$senha', '$telefone', '$genero',
         '$data_nasc', '$cidade', '$estado', '$endereco')");
+    
+        header('Location: login.php');
     }
 
 ?>
@@ -136,13 +138,13 @@
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="password" name="senha" id="senha" class="inputUser" required>
-                    <label for="senha" class="labelInput">Senha</label>
+                    <input type="email" name="email" id="email" class="inputUser" required>
+                    <label for="email" class="labelInput">Email</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
-                    <input type="email" name="email" id="email" class="inputUser" required>
-                    <label for="email" class="labelInput">Email</label>
+                    <input type="password" name="senha" id="senha" class="inputUser" required>
+                    <label for="senha" class="labelInput">Senha</label>
                 </div>
                 <br><br>
                 <div class="inputBox">
